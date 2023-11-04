@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="性能">
+
+        <SeekBarPreference
+            app:key="unlock_frame"
+            app:title="调节FPS上限"
+            app:summary="可设置游戏可达最高帧数（建议60）"
+            app:showSeekBarValue="true"
+            app:defaultValue="60"
+            app:min="30"
+            android:max="90" />
+
+        <SwitchPreferenceCompat
+            app:key="close_log"
+            app:title="关闭一些日志打印"
+            app:summary="没什么用"
+            app:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="辅助">
+
+        <SwitchPreferenceCompat
+            app:key="wide_screen"
+            app:isPreferenceVisible="false"
+            app:title="强制宽屏模式"
+            app:summary="宽屏模式下，可以看见屏幕外的僵尸\nps：若你手机本支持宽屏，则无需开启"/>
+
+        <SwitchPreferenceCompat
+            app:key="fast_ad"
+            app:selectable="true"
+            app:title="广告10秒"
+            app:summary="ps：此功能仅限TapTap版"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="设备">
+
+        <SwitchPreferenceCompat
+            app:key="get_device_id"
+            app:title="登录后复制ID"
+            app:summary="游戏登录后复制真实设备ID到粘贴板"
+            app:defaultValue="true"/>
+
+<!--        <Preference-->
+<!--            app:key="get_device_id"-->
+<!--            app:title="复制当前设备ID"-->
+<!--            app:summary="打开一次游戏即可获取到游戏设备id"/>-->
+
+        <SwitchPreferenceCompat
+            app:key="device_config"
+            app:title="开启修改设备ID"
+            app:summary="需要到下面选项配置ID"/>
+
+        <EditTextPreference
+            app:key="set_device_id"
+            app:title="设置设备ID"
+            app:summary="该功能可绕过设备绑定"
+            app:dependency="device_config"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
